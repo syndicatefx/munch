@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" user-scalable="no">
+<title>Munch | Feed Aggregator</title>
+<meta name="title" content="Munch | Feed Aggregator">
+<meta name="description" content="Javascript based personal feed aggregator app">
+<meta name="author" content="Paulo Nunes">
+<link href="app/style.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+<h1>Munch</h1><span>Beta</span>
+</header>
+<input data-function='swipe' id='swipe' type='checkbox'>
+<label data-function='swipe' for='swipe'><svg x="0px" y="0px" viewBox="0 0 32 32">
+<rect x="0" y="3" fill="#fff" width="32" height="5" rx="3" ry="3"/>
+<rect x="0" y="14" fill="#fff" width="32" height="5" rx="3" ry="3"/>
+<rect x="0" y="25" fill="#fff" width="32" height="5" rx="3" ry="3"/>
+</svg></label>
+<div class="wrap">
+
+  <section>
+    <h2 class="blog-title"></h2> 
+    <div class="grid">
+
+      <!--For Munch Website only info (delete if you want)-->
+      <div class="grid-item info">
+        <h2>Welcome to Munch<sup>Beta</sup></h2>
+        <p>Your personal feed aggregator.</p>
+        <p>This is a 100% vanilla Javascript experiment with a little help from <a href="http://github.com/evandrolg/Feed">feed.js</a> and <a href="https://github.com/andris9/simpleStorage">simplestorage.js</a>. It uses <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage#localStorage">localstorage</a> to store your feed list and <a href="https://developers.google.com/feed/v1/jsondevguide#resultJson">google's feed API</a> to fetch the latest articles of provided feed url.</p>
+        <p>This app was built as an exercise on using localstorage and practicing my javascript skills. Why a feed aggregator? For some time i've been wanting to pick up on an earlier version of a feed aggregator i built a few years ago that used a server-side script to process and output articles, but this time i wanted to see if i could make something totally client-side and platform independent.</p>
+        <h3>Beta Release</h3>
+        <p>It's not 100% fail safe. It probably isn't the neatest code and structure yet, it needs more features like providing warnings when deleting feeds from list, the ability to backup your feed list in case you want to clear your browser's localstorage, and maybe a better looking and functioning UI.</p>
+      </div>
+      <div class="grid-item info">
+        <h3>Source</h3>
+        <p><a href="https://github.com/syndicatefx/munch/archive/master.zip" class="btn">Download</a> <a href="https://github.com/syndicatefx/munch/blob/master/LICENSE" class="btn">License</a></p>
+
+        <iframe src="http://ghbtns.com/github-btn.html?user=syndicatefx&repo=munch&type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+        <iframe src="http://ghbtns.com/github-btn.html?user=syndicatefx&type=follow" allowtransparency="true" frameborder="0" scrolling="0" width="200" height="20"></iframe>
+        <hr>
+        <h3>Usage</h3>
+        <p>Just download Munch folder and put it anywhere you wish. No localhost/server needed.</p>
+        <p>Open index.html on a browser that <a href="http://caniuse.com/#search=localstorage">supports localstorage</a>, start adding your favorite feeds to the list, use it as your personal feed reader.</p>
+        <p>The interface is pretty simple, the delete buttons next to each item of the list deletes that item only, to clear the whole list from your localstorage click the <em>Clear List</em> button. <strong>(Warning: This will clear the list forever, you will have to add each item manually again)</strong></p>
+        <hr>
+        <p><small>Made with &#9825; by Paulo Nunes - <a href="http://syndicatefx.com">syndicatefx.com</a></small></p>
+      </div>
+      <!--END Munch Website info-->
+
+    </div>
+  </section>
+
+  <div class="sidebar">
+    <aside>
+      <ul id="list"></ul>
+      <h3>Add New Feed</h3>
+      <input type="text" id="set-value" placeholder="Feed URL"/>
+      <input type="text" id="set-key" placeholder="Website Name"/>
+      <button class="addfeed">Add</button>
+      <button class="clear">Clear List</button>
+    </aside>
+  </div>
+
+</div>
+
+<script src="app/js/lib/feed.js"></script>
+<script src="app/js/lib/simplestorage.js"></script>
+<script src="app/js/munch.js?ver=4414554554"></script>
+</body>
+</html>
