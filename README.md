@@ -1,3 +1,5 @@
+> Deprecated, no longer maintained
+
 Welcome to Munch
 =====
 
